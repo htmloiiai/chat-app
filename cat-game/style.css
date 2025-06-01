@@ -1,0 +1,50 @@
+body {
+  background-color: #fff0f5;
+      color: #333;
+      font-family: "Microsoft JhengHei", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 2rem;
+      text-align: center;
+      margin: 0;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  background-color: #3498db;   /* 淺藍（主色） */
+  color: white;                /* 白色文字 */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.cat-container {
+  margin-top: 30px;
+}
+
+#cat {
+  width: 150px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#cat:active {
+  transform: scale(1.05);
+}
+
+#cps {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 1rem;
+}
