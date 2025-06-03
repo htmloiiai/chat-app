@@ -1,0 +1,8 @@
+# 操作失敗：權限不足
+
+警報聲大作：「錯誤代碼：UNAUTHORIZED_OVERRIDE」
+
+反鎖機制啟動，林瑜被迫後退。
+
+* 返回上層
+- 返回選擇操作 → chapter1/controlroom.txt
