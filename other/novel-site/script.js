@@ -16,6 +16,10 @@ function loadChapter(path) {
     });
 }
 
+function highlightCPH4(text) {
+  return text.replace(/CPH-4/g, '<span class="cph4">CPH-4</span>');
+}
+
 // ========== 章節文字格式化（支援分支） ==========
 function formatChapterText(text) {
   const lines = text.split("\n");
@@ -24,6 +28,8 @@ function formatChapterText(text) {
 
   lines.forEach((line) => {
     line = line.trim();
+    line = highlightCPH4(line);
+
     if (line.startsWith("#")) {
       html += `<h2>${line.substring(1).trim()}</h2>`;
     } else if (line.startsWith("!")) {

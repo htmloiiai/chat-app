@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const apiKey = 'AIzaSyDvFDjXLUuy7m4GsZABDehLB_4hVcyKw4s';
+  const apiKey = 'AIzaSyAHMUGk-lgVNdqAtZH5IHtaGtESIR-r8V0'; // ✅ 你的新 API 金鑰
   const channelId = 'UCTV2JFS__3qhIgCCgC8myoQ';
   const countElement = document.getElementById('subscriber-count');
 
@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`
       );
       const data = await response.json();
+
+      if (!data.items || data.items.length === 0) {
+        throw new Error("找不到頻道資料");
+      }
+
       const count = parseInt(data.items[0].statistics.subscriberCount);
       countElement.textContent = `🎥 訂閱人數：${count.toLocaleString()} 人`;
 
-      // 🔓 解鎖里程碑
       const milestones = document.querySelectorAll('.milestone');
       milestones.forEach(milestone => {
         const requiredSubs = parseInt(milestone.dataset.subs);
@@ -26,14 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } catch (error) {
       countElement.textContent = '⚠️ 訂閱數讀取失敗';
-      console.error('讀取訂閱數時發生錯誤：', error);
+      console.error('訂閱 API 錯誤：', error);
     }
   }
 
   fetchSubscribers();
-  setInterval(fetchSubscribers, 10000); // 每 10 秒更新一次
+  setInterval(fetchSubscribers, 10000);
 
-  // ✨ 打字動畫結束後移除游標動畫（如果有）
+  // 🔽 里程碑收合按鈕
+  const toggleBtn = document.getElementById('toggle-milestone');
+  const milestoneSection = document.querySelector('.milestone-section');
+
+  if (toggleBtn && milestoneSection) {
+    toggleBtn.addEventListener('click', () => {
+      const collapsed = milestoneSection.classList.toggle('collapsed');
+      toggleBtn.textContent = collapsed ? '🔽 顯示里程碑' : '🔼 收起里程碑';
+    });
+  }
+
+  // ✨ 動畫與 IntersectionObserver
   const typewriterEl = document.querySelector('.typewriter');
   if (typewriterEl) {
     typewriterEl.addEventListener('animationend', (e) => {
@@ -44,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 👁️‍🗨️ 元素出現時觸發動畫（main-text, subs-count, text-group）
   const selectors = ['.main-text.hidden', '.subs-count', '.text-group.hidden'];
   selectors.forEach(selector => {
     const el = document.querySelector(selector);
@@ -62,13 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// 👇 里程碑展開/收起功能
-// 👇 里程碑展開/收起功能（動畫版）
-const toggleBtn = document.getElementById('toggle-milestone');
-const milestoneSection = document.querySelector('.milestone-section');
-
-toggleBtn.addEventListener('click', () => {
-  const collapsed = milestoneSection.classList.toggle('collapsed');
-  toggleBtn.textContent = collapsed ? '🔽 顯示里程碑' : '🔼 收起里程碑';
-});
-
+// 🔗 社群區滾動功能
+function scrollToSocial() {
+  const target = document.getElementById("social");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}

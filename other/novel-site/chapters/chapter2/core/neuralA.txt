@@ -5,5 +5,5 @@
 神經網絡界面啟動。你看到的不是圖像，而是數據邏輯流與語言函式。
 
 * 進行選擇
-- 執行語義結構分析（偏人類語系） → core/neuralB1.txt
-- 解碼二進制精神資料（偏非人類語系） → core/neuralB2.txt
+- 執行語義結構分析（偏人類語系） → chapter2/core/neuralB1.txt
+- 解碼二進制精神資料（偏非人類語系） → chapter2/core/neuralB2.txt

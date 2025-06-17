@@ -21,6 +21,35 @@ a:hover::after {
   width: 97%;
 }
 
+a.no-hover::after,
+a.no-hover:hover::after {
+  content: none; /* 不要出現底線動畫 */
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.secret-avatar {
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px white;
+}
+
+.secret-avatar:hover {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+
+
 /* 連結共用基本樣式 */
 a.yt-link, a.dc-link {
   position: relative;
@@ -316,6 +345,9 @@ button {
   box-shadow: 0 0 10px rgba(56, 161, 105, 0.5);
 }
 
+.social {
+  margin-left: 1rem;
+}
 
 .social h3 {
   margin-top: 2rem;
@@ -469,4 +501,33 @@ button {
     flex-direction: column;
     text-align: center;
   }
+}
+
+#button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.secret-avatar a {
+  cursor: none;
+}
+
+.secret-avatar {
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px white;
+}
+
+.secret-avatar:hover {
+  transform: scale(1.05);
+  filter: brightness(85%);
 }

@@ -5,4 +5,4 @@
 系統提示：「非授權進程干擾，已導致認知迴圈異常。」
 
 * 返回上層，重試不同語系
-- 返回接口選擇 → core/neuralA.txt
+- 返回接口選擇 → chapter2/core/neuralA.txt

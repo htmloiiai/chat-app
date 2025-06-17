@@ -5,4 +5,4 @@
 「錯誤路徑，重置中——」
 
 * 你已偏離正確讀取流程。
-- 回到上一層重新選擇 → core/visionA.txt
+- 回到上一層重新選擇 → chapter2/core/visionA.txt

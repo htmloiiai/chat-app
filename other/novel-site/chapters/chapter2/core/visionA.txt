@@ -5,5 +5,5 @@
 光影開始重組，形成一個記憶迴廊。林瑜看見模糊的人影——像是自己，但又多了某些超越人類的部分。
 
 * 接近左側影像，嘗試辨識身分
-- 接觸模糊人影 → core/visionB1.txt
-- 從遠處觀察 → core/visionB2.txt
+- 接觸模糊人影 → chapter2/ore/visionB1.txt
+- 從遠處觀察 → chapter2/core/visionB2.txt
