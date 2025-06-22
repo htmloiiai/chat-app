@@ -531,3 +531,10 @@ button {
   transform: scale(1.05);
   filter: brightness(85%);
 }
+
+#github-projects, #MBTI {
+  padding: 3rem 1rem;
+  background: #0a0a0a;
+  color: #fff;
+  text-align: center;
+}
