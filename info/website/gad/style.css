@@ -1,0 +1,23 @@
+body {
+    background: #8A8A8A;
+    color: #eeeeee;
+    font-family: 'Quicksand', arial;
+}
+
+.head-image {
+    width: 150px;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.head-text {
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.friends {
+    text-align: center;
+    margin-top: 10vh;
+}
